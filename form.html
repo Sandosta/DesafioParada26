@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>Formulário</title>
+</head>
+<body class="bg">
+        <div class="ctn">
+        <form action="cadastro.html" onsubmit="return valida()" id="cadastro" method="post">
+        <h1>Formulário de inscrição</h1>
+        <label>Nome</label>
+        <input type="text" id="nome" required>
+        <label>Sobrenome</label>
+        <input type="text" id="sobrenome" required>
+        <label>Data de nascimento</label>
+        <input type="date" id="niver" required>
+        <br>
+        <label>Email</label>
+        <input type="mail" id="email" required>
+        <br>
+        <label>Tel</label>
+        <input type="tel" id="tel">
+        <br>
+        <br>
+        <label>Qual tipo de atividade você deseja exercer?</label>
+        <select id="ativ" required>
+                <option>Trabalhar com mídia</option>
+                <option>Receber e realizar teste dos produtos</option>
+                <option>Trabalhar com recursos humanos</option>
+                <option>Trabalhar no laboratorio de criação</option>
+                <option>outro...</option>
+        </select>
+        <br>
+        <label>Com qual genêro você se identifica?</label>
+        <br>
+        <input type="radio" name="genero"/> Feminino
+        <input type="radio" name="genero"/> Masculino
+        <input type="radio" name="genero"/> Não binário
+        <br>
+        <br>
+        <label>Li e concordo com os termos de privacidade</label>
+        <input type="radio" name="termo" required/>
+        <input type="submit"/>
+        </div>
+
+        <script>
+                function valida(){
+
+                        var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+                if(email.value.match(mailformat)){
+                        email.focus();
+                }else{
+                        alert('email invalido')
+                        email.focus();
+                        return false
+                }
+
+                return true
+                }
+        </script>
+
+</form>
+</body>
+</html>
